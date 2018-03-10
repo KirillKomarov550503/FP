@@ -1,58 +1,15 @@
 package practice.functional;
 
+import resource.general.MaxOrMin;
+import resource.general.Person;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-class Person {
-    @Override
-    public String toString() {
-        return "Person{" +
-                "age=" + age +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-    private Integer age;
-    private String name;
-
-    public Integer getAge() {
-        return age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(age, person.age) &&
-                Objects.equals(name, person.name);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(age, name);
-    }
-
-    public Person(Integer age, String name) {
-        this.age = age;
-        this.name = name;
-
-    }
-
-    public String getName() {
-        return name;
-    }
-}
-
-enum MaxOrMin {
-    MAX, MIN
-}
-
-public class Task {
+public class Task1 {
     private static Stream<Person> streamTask1(List<Person> personList, MaxOrMin maxOrMin) {
 
         Stream<Person> personStream;
@@ -79,6 +36,9 @@ public class Task {
     public static List<Person> toListTask1(List<Person> personList, MaxOrMin maxOrMin) {
         return streamTask1(personList, maxOrMin).collect(Collectors.toList());
     }
+
+
+
 
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
