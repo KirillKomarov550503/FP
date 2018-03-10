@@ -2,6 +2,7 @@ package practice.functional;
 
 import resource.general.Converter;
 import resource.general.MaxOrMin;
+import resource.general.People;
 import resource.general.Person;
 
 import java.util.ArrayList;
@@ -33,12 +34,7 @@ public class Task1 {
 
 
     public static void main(String[] args) {
-        List<Person> people = new ArrayList<>();
-        people.add(new Person(20, "Kirill"));
-        people.add(new Person(80, "Timoshenko"));
-        people.add(new Person(25, "Bazanov"));
-        people.add(new Person(65, "Putin"));
-        System.out.println("Input list: " + people);
+        List<Person> people = People.getPeople();
         List<Person> listWithoutMin = Converter.toListTask(toStream(people, MaxOrMin.MIN));
         List<Person> listWithoutMax = Converter.toListTask(toStream(people, MaxOrMin.MAX));
         Map<Integer, Person> mapWithoutMin = Converter.toMapTask(toStream(people, MaxOrMin.MIN));
@@ -49,4 +45,6 @@ public class Task1 {
         System.out.println("Map without max: " + mapWithoutMax);
 
     }
+
+
 }
