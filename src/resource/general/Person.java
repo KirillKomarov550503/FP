@@ -2,7 +2,7 @@ package resource.general;
 
 import java.util.Objects;
 
-class Person {
+public class Person {
     @Override
     public String toString() {
         return "Person{" +

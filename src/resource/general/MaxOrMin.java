@@ -1,5 +1,6 @@
 package resource.general;
 
-enum MaxOrMin {
+
+public enum MaxOrMin {
     MAX, MIN
 }
